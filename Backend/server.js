@@ -32,12 +32,21 @@ const upload = multer({ storage });
 // Node.js example
 
 
+//const db = mysql.createConnection({
+//  host: "localhost",
+//  user: "root",
+//  password: "cimatec",
+//  database: "dignitec",
+//  port: 3306
+//});
+
+// Configura a conexão com o banco de dados MySQL usando o .env
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "mateus",
-  database: "dignitec",
-  port: 3306
+  host: process.env.MYSQLHOST,       // Puxa o HOST do .env
+  user: process.env.MYSQLUSER,       // Puxa o USER do .env
+  password: process.env.MYSQLPASSWORD, // Puxa a SENHA do .env
+  database: process.env.MYSQLDATABASE, // Puxa o NOME DO BANCO do .env
+  port: process.env.MYSQLPORT || 3306  // Puxa a PORTA do .env (se não achar, usa 3306)
 });
 
 db.connect((err) => {
@@ -53,7 +62,7 @@ app.post('/anuncios', upload.single('imagemCapa'), (req, res) => {
   console.log("Salvei o body")
   const sql = 'INSERT INTO form_anuncio (nomeProjeto, categoria, descricao, localizacao, contato, imagemCapa) VALUES (?, ?, ?, ?, ?, ?)';
   const values = [nomeProjeto, categoria, descricao, localizacao, contato, imagemCapa];
-
+  console.log('cheguei até aqui')
   db.query(sql, values, (err) => {
     if (err) {
       console.error('Erro ao inserir:', err);

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
-
-  form.addEventListener('submit', async (event) => {
+  if (form) {
+      form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const formData = new FormData(form); // envia todos os campos + arquivo
@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Erro ao cadastrar o anúncio.');
     }
   });
+  }
+
 });
 
 async function pegarDados() {
@@ -27,6 +29,8 @@ async function pegarDados() {
     const resposta = await fetch("http://localhost:3000/anuncios");
     const conteudo = await resposta.json();
     const container = document.querySelector("#lista-anuncios");
+
+    if (!container) return;
 
     container.innerHTML = conteudo.map(anuncio => `
       <div class="anuncio">
