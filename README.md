@@ -57,5 +57,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina o [Node.js](
 
 ### **1. Clonar o Repositório**
 ```bash
-git clone [https://github.com/SEU-USUARIO/dignitec.git](https://github.com/SEU-USUARIO/dignitec.git)
-cd dignitec
+git clone (https://github.com/MateusClaudio-dev/Dignitec.git)
+
+
+
