@@ -1,0 +1,125 @@
+/* 1. O Cabeçalho principal */
+
+:root {
+    --primaria-branca: #ffff;
+    --secundaria-laranja: lab(67.73% 25.32 71.19);
+    --terciaria-preto: black;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between; /* Empurra logo para a esquerda, menu para a direita e busca no meio */
+    align-items: center;           /* Alinha todos verticalmente ao centro */
+    padding: 10px 20px;            /* Dá um respiro nas laterais para não colar na tela */
+    background-color: var(--primaria-branca);     
+    gap: 20px;                      /* Garante que eles NUNCA vão se encostar */   
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09); 
+}
+
+.cabecalho__logo__img {
+    width: 70px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 2. O Campo de Pesquisa */
+.cabecalho__campo-pesquisa {
+    flex-grow: 1;             /* Permite que a busca ocupe o espaço do meio */
+    max-width: 300px;   /* Define um tamanho máximo elegante para a barra */
+}
+
+.cabecalho__campo-pesquisa input {
+    width: 100%;                   /* Faz o input ocupar todo o espaço do contêiner dele */
+    padding: 8px 22px;
+    border: 1px solid var(--secundaria-laranja);
+    border-radius: 4px;
+}
+
+/* 3. A Lista do Menu */
+.list-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;                     /* Espaçamento seguro entre as opções do menu */
+}
+
+.list-menu a:hover {
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--secundaria-laranja);
+}
+
+/* 4. Os links do Menu (Evita a quebra do texto + emoji) */
+.list-menu a {
+    text-decoration: none;
+    color:var(--terciaria-preto);
+    font-family: sans-serif;
+    
+    /* O truque de mestre aqui: */
+    display: flex;
+    align-items: center;
+    gap: 5px;                      /* Espaço entre a palavra e o emoji */
+    white-space: nowrap;           /* Impede o emoji de cair para a linha de baixo */
+}
+
+/* lista-anuncios - DADOS DE ANUNCIOS DO BD */
+
+#lista-anuncios {
+    display: flex;
+     flex-wrap: wrap; /* Permite a quebra de linha */
+    gap: 10px; /* Adiciona espaçamento entre os itens */
+}
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: #f80909;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fa3;
+} 
+
+.anuncio {
+  margin-left: 20px;
+  width: 350px;
+  max-height: max-content;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-top: 25px;
+  box-shadow: 0 4px 6px rgb(0, 0, 0.3);
+}
+
+.anuncio, .img-anuncio h2, p {
+  justify-content: space-between;
+  padding: 5px;
+  
+}
+
+.nomeProjeto {
+  margin-left: 3px;
+  color: #050505;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-anuncio {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.descricao {
+   overflow-wrap: break-word;
+   font-size: 20px;
+}
+
+.contatos {
+  background-color: var(--secundaria-laranja);
+}
