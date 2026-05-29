@@ -63,10 +63,10 @@ class Anuncio {
     
     return `
       <div class="anuncio">
-        ${urlImagem ? `<img class="img-anuncio" src="${urlImagem}" width="200" alt="Capa do projeto">` : ''}
+        ${urlImagem ? `<img class="img-anuncio" src="${urlImagem}"  alt="Capa do projeto">` : ''}
         <h2 class="nomeProjeto">${this.nomeProjeto}</h2>
-        <p><strong>Localização: </strong>${this.localizacao}</p>
         <p class="descricao">${this.descricao}</p>
+        <p><strong>Localização: </strong>${this.localizacao}</p>
         <button class="contatos">${this.contato}</button>
       </div>
     `;
