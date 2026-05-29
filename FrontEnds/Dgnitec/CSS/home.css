@@ -8,11 +8,11 @@
 
 .cabecalho {
     display: flex;
-    justify-content: space-between; /* Empurra logo para a esquerda, menu para a direita e busca no meio */
-    align-items: center;           /* Alinha todos verticalmente ao centro */
-    padding: 10px 20px;            /* Dá um respiro nas laterais para não colar na tela */
+    justify-content: space-between; 
+    align-items: center;           
+    padding: 10px 20px;            
     background-color: var(--primaria-branca);     
-    gap: 20px;                      /* Garante que eles NUNCA vão se encostar */   
+    gap: 20px;                       
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09); 
 }
 
@@ -22,26 +22,26 @@
     border-radius: 10px;
 }
 
-/* 2. O Campo de Pesquisa */
+
 .cabecalho__campo-pesquisa {
-    flex-grow: 1;             /* Permite que a busca ocupe o espaço do meio */
-    max-width: 300px;   /* Define um tamanho máximo elegante para a barra */
+    flex-grow: 1; /* Permite que a busca ocupe o espaço do meio */
+    max-width: 300px;   
 }
 
 .cabecalho__campo-pesquisa input {
-    width: 100%;                   /* Faz o input ocupar todo o espaço do contêiner dele */
+    width: 100%;                   
     padding: 8px 22px;
     border: 1px solid var(--secundaria-laranja);
     border-radius: 4px;
 }
 
-/* 3. A Lista do Menu */
+
 .list-menu {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 25px;                     /* Espaçamento seguro entre as opções do menu */
+    gap: 25px;                     
 }
 
 .list-menu a:hover {
@@ -50,21 +50,18 @@
     color: var(--secundaria-laranja);
 }
 
-/* 4. Os links do Menu (Evita a quebra do texto + emoji) */
+
 .list-menu a {
     text-decoration: none;
     color:var(--terciaria-preto);
     font-family: sans-serif;
-    
-    /* O truque de mestre aqui: */
     display: flex;
     align-items: center;
-    gap: 5px;                      /* Espaço entre a palavra e o emoji */
-    white-space: nowrap;           /* Impede o emoji de cair para a linha de baixo */
+    gap: 5px;                      
+    white-space: nowrap;          
 }
 
 /* lista-anuncios - DADOS DE ANUNCIOS DO BD */
-
 #lista-anuncios {
     display: flex;
      flex-wrap: wrap; /* Permite a quebra de linha */
