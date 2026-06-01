@@ -144,8 +144,10 @@ label {
 
 /* lista-anuncios - DADOS DE ANUNCIOS DO BD */
 #lista-anuncios {
+  gap: 30px;
   display: flex;
   margin-top: 10px;
+  flex-direction: row;
   flex-wrap: wrap;
   background-color: var(--primaria-branca);
 }
